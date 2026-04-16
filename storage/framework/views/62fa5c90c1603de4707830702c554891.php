@@ -28,23 +28,6 @@
                     </div>
 
                     
-                    <div class="flex items-center gap-2 mb-6">
-                        <a href="<?php echo e(route('product.edit', $product)); ?>"
-                            class="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg border border-amber-300 dark:border-amber-600 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition">
-                            Edit
-                        </a>
-                        <form action="<?php echo e(route('product.delete', $product->id)); ?>" method="POST"
-                            onsubmit="return confirm('Are you sure you want to delete this product?')">
-                            <?php echo csrf_field(); ?>
-                            <?php echo method_field('DELETE'); ?>
-                            <button type="submit"
-                                class="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg border border-red-300 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition">
-                                Delete
-                            </button>
-                        </form>
-                    </div>
-
-                    
                     <div class="rounded-lg border border-gray-200 dark:border-gray-700 divide-y divide-gray-100 dark:divide-gray-700">
                         <div class="flex items-center px-5 py-4">
                             <div class="w-32 shrink-0 text-sm text-gray-500 dark:text-gray-400">Product Name</div>

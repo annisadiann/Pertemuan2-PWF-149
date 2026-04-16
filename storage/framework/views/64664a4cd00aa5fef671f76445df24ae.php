@@ -109,37 +109,6 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         
-                        <div>
-                            <label for="user_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                Owner <span class="text-red-500">*</span>
-                            </label>
-                            <select id="user_id" name="user_id"
-                                class="w-full px-4 py-2.5 rounded-lg border text-sm
-                                <?php echo e($errors->has('user_id') ? 'border-red-400 bg-red-50 dark:bg-red-900/20' : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'); ?>
-
-                                text-gray-900 dark:text-gray-100
-                                focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
-                                <option value="">-- Select Owner --</option>
-                                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($user->id); ?>" <?php echo e(old('user_id', $product->user_id) == $user->id ? 'selected' : ''); ?>>
-                                        <?php echo e($user->name); ?>
-
-                                    </option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </select>
-                            <?php $__errorArgs = ['user_id'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                <p class="mt-1.5 text-xs text-red-500"><?php echo e($message); ?></p>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-
-                        
                         <div class="flex items-center justify-between pt-2">
                             <button type="submit"
                                 onclick="return confirm('Are you sure you want to delete this product?');"

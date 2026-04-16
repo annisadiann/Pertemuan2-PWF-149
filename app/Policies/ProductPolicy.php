@@ -40,11 +40,17 @@ class ProductPolicy
         return $user->role === 'admin' && $user->id === $product->user_id;
     }
 
+    /**
+     * Determine whether the user can delete the model.
+     */
     public function delete(User $user, Product $product): bool
     {
         return $user->role === 'admin' && $user->id === $product->user_id;
     }
 
+    /**
+     * Determine whether the user can restore the model.
+     */
     public function restore(User $user, Product $product): bool
     {
         return false;
